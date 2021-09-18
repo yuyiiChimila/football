@@ -14,10 +14,10 @@ export default function BlogNewsContent() {
               <p className="fs-4 mb-0">Latest<span className="fw-bold ms-2">News</span></p>
             </Col>
             <Col sm={9} className="text-md-end">
-            <Button variant="light" className="mx-1 mb-1" size="sm" active>All</Button>
-            <Button variant="light" className="mx-1 mb-1" size="sm">The Team</Button>
-            <Button variant="light" className="mx-1 mb-1" size="sm">Uefa 2016</Button>
-            <Button variant="light" className="ms-1 mb-1" size="sm">UEFA 2017</Button>
+              <Button variant="light" className="mx-1 mb-1" size="sm" active>All</Button>
+              <Button variant="light" className="mx-1 mb-1" size="sm">The Team</Button>
+              <Button variant="light" className="mx-1 mb-1" size="sm">Uefa 2016</Button>
+              <Button variant="light" className="ms-1 mb-1" size="sm">UEFA 2017</Button>
             </Col>
           </Row>
         </div>
@@ -61,7 +61,7 @@ export default function BlogNewsContent() {
             </Row>
           </Col>
           <Col md={6} className="pe-md-0 ps-md-2 px-0 mt-3">
-          <Row> 
+            <Row> 
               <Col xs={4}>
               <Figure>
                 <Figure.Image src={soccer}/>
@@ -75,7 +75,7 @@ export default function BlogNewsContent() {
             </Row>
           </Col>
           <Col md={6} className="ps-md-0 pe-md-2 px-0 mt-3">
-          <Row> 
+            <Row> 
               <Col xs={4}>
               <Figure>
                 <Figure.Image src={soccer}/>
@@ -89,7 +89,7 @@ export default function BlogNewsContent() {
             </Row>
           </Col>
           <Col md={6} className="pe-md-0 ps-md-2 px-0 mt-3">
-          <Row> 
+            <Row> 
               <Col xs={4}>
               <Figure>
                 <Figure.Image src={soccer}/>

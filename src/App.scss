@@ -21,6 +21,14 @@ a {
     text-decoration: none;
 }
 
+.color-main {
+    color: $color-main;
+}
+
+.font-time-head {
+    font-size: 4rem;
+}
+
 .nav-top {
     display: block;
     background: #24252f;
@@ -28,10 +36,6 @@ a {
     width: 100%;
     padding: 12px 0 0;
     font-size: 12px;
-}
-
-.color-main {
-    color: $color-main;
 }
 
 .section-header{
@@ -69,16 +73,16 @@ a {
     display: block;
     border-bottom: 2px solid $color-main;
     position: relative;
-}
+    &::before {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: 0px;
+        border-style: solid;
+        border-width: 0 0 15px 15px;
+        border-color: transparent transparent $color-main transparent;
 
-.title-section::before {
-    content: "";
-    position: absolute;
-    right: 0;
-    bottom: 0px;
-    border-style: solid;
-    border-width: 0 0 15px 15px;
-    border-color: transparent transparent $color-main transparent;
+    }
 }
 
 .widget-title {
@@ -86,16 +90,15 @@ a {
     background: $color-dark;
     position: relative;
     height: 40px;
-}
-
-.widget-title::before {
-    content: '';
-    width: 3px;
-    height: 100%;
-    background: $color-main;
-    position: absolute;
-    left: 0;
-    top: 0;
+    &::before {
+        content: '';
+        width: 3px;
+        height: 100%;
+        background: $color-main;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
 }
 
 .title-vdio {
@@ -105,7 +108,6 @@ a {
     height: 40px;
 }
 
-
 .arrow-style {
     display: inline-block;
     position: absolute;
@@ -114,16 +116,15 @@ a {
     background: $color-main;
     width: 40px;
     height: 40px;
-}
-
-.arrow-style::before {
-    content: '';
-    position: absolute;
-    left: -40px;
-    bottom: 0px;
-    border-style: solid;
-    border-width: 0 0 40px 40px;
-    border-color: transparent transparent $color-main transparent;
+    &::before {
+        content: '';
+        position: absolute;
+        left: -40px;
+        bottom: 0px;
+        border-style: solid;
+        border-width: 0 0 40px 40px;
+        border-color: transparent transparent $color-main transparent;
+    }
 }
 
 .bestplayer {
@@ -152,15 +153,15 @@ a {
     border-left: $border-cc;
 }
 
-.foolball-new{
+.board-score-bg{
     background-color: $color-dark;
 }
 
 @mixin theme-card($height,$opacity,$background) {
     position: relative;
-    width: 100%; /* Maximum width */
+    width: 100%;
     height: $height;
-    margin: 0 auto; /* Center it */
+    margin: 0 auto;
     padding: 0;
     &::before{
         content: "";
@@ -174,16 +175,16 @@ a {
 }
 
 @mixin theme-card-img($height: 0) {
-    width: 100%; /* Maximum width */
+    width: 100%;
     height: $height;
     object-fit: cover;
 }
 
 %content {
-    position: absolute; /* Position the background text */
-    bottom: 0; /* At the bottom. Use top:0 to append it to the top */
-    width: 100%; /* Full width */
-    padding: 20px; /* Some padding */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
 }
 
 %year{
@@ -265,25 +266,21 @@ a {
 .box-polls{
     $color : $color-main;
     @include theme-card(37vh,0.9,$color);
-    
     .content {
-        position: absolute; /* Position the background text */
-        top: 0; /* At the bottom. Use top:0 to append it to the top */
-        width: 100%; /* Full width */
-        padding: 20px; /* Some padding */
+        position: absolute;
+        top: 0;
+        width: 100%;
+        padding: 20px;
     }
-
     img{
         @include theme-card-img($height: 37vh);
     }
-
     input[type=radio] {
         width: 1.5em;
         height: 1.5em;
         margin: 0 0.5rem;
         border: 2px solid wheat;
     }
-    
     input[type=radio]:checked {
         background-color: wheat;
         border-color: wheat;
@@ -293,14 +290,12 @@ a {
 .content-vdio{
     $color : linear-gradient(to top, #24252f, #24252f, #24252f73, #0e0e0e05);
     @include theme-card(27vh,0.9,$color);
-    
     .content {
-        position: absolute; /* Position the background text */
-        bottom: 0; /* At the bottom. Use top:0 to append it to the top */
-        width: 100%; /* Full width */
-        padding: 20px; /* Some padding */
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 20px;
     }
-
     img{
         @include theme-card-img($height: 27vh);
     }
@@ -313,7 +308,6 @@ a {
     ul {
         padding: 0;
         margin: 0;
-
         li {
             margin-bottom: 6px;
             font-size: 14px;
@@ -340,7 +334,7 @@ a {
     }
 }
 
-.vertical-timeline {
+.timeline {
     width: 100%;
     position: relative;
     &::before {
@@ -355,27 +349,15 @@ a {
     }
 }
 
-.vertical-timeline-element {
+.timeline-element {
     position: relative;
     padding: 0 18px;
 }
 
-.vertical-timeline-element-content {
+.timeline-element-content {
     position: relative;
     margin-left: 90px;
-    &::after {
-        content: "";
-        display: table;
-        clear: both;
-    }
-    .timeline-title {
-        font-size: .8rem;
-        text-transform: uppercase;
-        margin: 0 0 .5rem;
-        padding: 2px 0 0;
-        font-weight: bold;
-    }
-    .vertical-timeline-element-date {
+    .timeline-element-date {
         display: block;
         position: absolute;
         left: -90px;
@@ -417,6 +399,7 @@ a {
         border-color: $color-main!important;
     }
 }
+
 .btn-light.active {
     background-color: $color-main!important;
     border-color: $color-main!important;
@@ -473,6 +456,9 @@ a {
 
 
 @media (max-width: 992px) {
+    .font-time-head {
+        font-size: 2rem;
+    }
     .match-time-section {
         .time-content {
             margin-left:0;
